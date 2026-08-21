@@ -918,18 +918,73 @@ var SLIDES = [
 '今天如果你只記得一件事，我希望是這一件 —— 因為它不需要任何資源，'+
 '只需要你願意在孩子面前，誠實地說出自己現在是什麼顏色。</div>'},
 
-{t:'Q & A · 謝謝', part:'✨ 承諾收尾', time:'02:58', html:
-'<div class="divider">'+
-'<div class="num" style="color:var(--dawn)">?</div>'+
-'<h2>Q &amp; A</h2>'+
-'<p style="font-size:1.05em;color:var(--ink2)">我先問一個問題：<br>'+
-'<b>今天哪一頁，你覺得在鹿場「完全行不通」？</b></p>'+
-'<p style="margin-top:.8em">行不通的地方，才是我們今天真正該談的地方。</p>'+
-'<div class="time" style="margin-top:2em">陳彥揚　校長<br>'+
-'<span style="color:var(--muted);font-weight:600">雲林縣辰光國小　·　前興南國小　·　雲林縣英語資源中心</span></div>'+
-'<p style="margin-top:1.4em;font-size:1.1em;font-weight:900;color:var(--dawn)">Thank you.　I can do it!</p>'+
-'<p style="font-size:.85em;color:var(--muted)">—— 這是辰光每個週一，全校一起喊的最後一句。</p>'+
-'</div>'},
+{t:'延伸數位工具 · 四個帶回去就能用的連結', part:'✨ 承諾收尾', time:'02:58', html:
+'<div class="eyebrow">TOOLSET 延伸 · 掃碼即開，不用安裝、不用登入</div>'+
+'<h2 class="h-slide">帶回去就能用的四個連結</h2>'+
+'<p class="sub">前兩個給學生玩，後兩個給老師用。全部都可以直接投影或做成班級 QR 貼在教室裡。</p>'+
+'<div class="rule"></div>'+
+'<div class="linkgrid">'+
+
+'<div class="linkcard e" data-qr="https://cyysongyy.github.io/claude-4colos-to-thermometer/" data-size="150">'+
+'<div class="qrimg"></div><div>'+
+'<h4><span class="n">01</span>從 4 色到情緒溫度計</h4>'+
+'<p>把「四種顏色」延伸成「一天的情緒溫度」—— 從靜態辨識走到動態追蹤。</p>'+
+'<div class="u"></div><a class="go" href="#" target="_blank">開啟</a>'+
+'</div></div>'+
+
+'<div class="linkcard m" data-qr="https://cyysongyy.github.io/4colors-emotionalthermmeter-/" data-size="150">'+
+'<div class="qrimg"></div><div>'+
+'<h4><span class="n">02</span>4 色情緒溫度計 · 互動遊戲</h4>'+
+'<p>四色情緒闖關 ＋ 學校一天五時段溫度計 ＋ 個人情緒報告，適合晨圈或班會使用。</p>'+
+'<div class="u"></div><a class="go" href="#" target="_blank">開啟</a>'+
+'</div></div>'+
+
+'<div class="linkcard g" data-qr="https://script.google.com/macros/s/AKfycbxXB6AT_ZsaN35uNBi6A43cE7o90xpkEjiVAfUqB76HWzOEzdNp1C428R3zLNAB_SHC/exec" data-size="150">'+
+'<div class="qrimg"></div><div>'+
+'<h4><span class="n">03</span>SEL 線上工具 ①</h4>'+
+'<p>Google Apps Script 線上版，掃碼直接開，不需要登入。</p>'+
+'<div class="u"></div><a class="go" href="#" target="_blank">開啟</a>'+
+'</div></div>'+
+
+'<div class="linkcard r" data-qr="https://script.google.com/macros/s/AKfycbx2-bCNyRkQ6rEGhlSCWqm_SESoLGEriJeNBpm_hIoVo7En5865L_4_YQhAcIszIxcY/exec" data-size="150">'+
+'<div class="qrimg"></div><div>'+
+'<h4><span class="n">04</span>SEL 線上工具 ②</h4>'+
+'<p>Google Apps Script 線上版，掃碼直接開，不需要登入。</p>'+
+'<div class="u"></div><a class="go" href="#" target="_blank">開啟</a>'+
+'</div></div>'+
+
+'</div>'+
+'<div class="note">用法建議：<b>①② 做成班級 QR 貼在情緒角落</b>，孩子隨時可以自己去比一次顏色；'+
+'<b>③④ 存成手機書籤</b>，你在課堂上三秒就能叫出來。<br>'+
+'<span style="color:var(--muted);font-size:.92em">工具只是降低門檻的東西 —— 真正會留下來的，還是你每天那 30 秒的動作。</span></div>'},
+
+{t:'Q & A · 回饋 · 謝謝', part:'✨ 承諾收尾', time:'02:59', html:
+'<div class="eyebrow">CHECK-OUT · Q &amp; A · 研習回饋</div>'+
+'<h2 class="h-slide">今天哪一頁，你覺得在鹿場「完全行不通」？</h2>'+
+'<p class="sub">行不通的地方，才是我們今天真正該談的地方。</p>'+
+'<div class="rule"></div>'+
+'<div class="qrpage">'+
+'<div class="qrbox" data-qr="https://docs.google.com/forms/d/e/1FAIpQLSfNVzCYsFEssm-L9nRajRJRqy-IwSoq9vknB4j-mQsWHEsqMA/viewform">'+
+'<div style="font-size:.8rem;font-weight:900;letter-spacing:.12em;color:var(--dawn)">研習回饋 · 鹿場 20260916</div>'+
+'<div class="qrimg"></div><div class="u"></div>'+
+'<a class="go" href="#" target="_blank">開啟回饋表單</a></div>'+
+'<div>'+
+'<div class="card" style="border-top:6px solid var(--dawn)">'+
+'<h3 style="font-size:1.2em;margin-bottom:.4em">📝 散場前，請花 2 分鐘留一句話</h3>'+
+'<ul class="bul">'+
+'<li><b>今天哪一個工具，你這週真的會用？</b></li>'+
+'<li><b>哪一頁你覺得在你的班上行不通？</b>（這一題最有價值，請誠實）</li>'+
+'<li>你希望下一次的研習，多講什麼、少講什麼？</li>'+
+'</ul>'+
+'<p style="font-size:.88em;color:var(--muted);margin-top:.7em">回饋會直接影響下一場的內容 —— 也會回頭改進辰光自己的做法。</p>'+
+'</div>'+
+'<div class="card" style="margin-top:14px;text-align:center;background:linear-gradient(160deg,#fff,#fff7f0)">'+
+'<div style="font-weight:900;font-size:1.05em">陳彥揚　校長</div>'+
+'<div style="color:var(--muted);font-size:.9em">雲林縣辰光國小　·　前興南國小　·　雲林縣英語資源中心</div>'+
+'<p style="margin-top:.9em;font-size:1.15em;font-weight:900;color:var(--dawn)">Thank you.　I can do it!</p>'+
+'<p style="font-size:.85em;color:var(--muted);margin:0">—— 這是辰光每個週一，全校一起喊的最後一句。</p>'+
+'</div>'+
+'</div></div>'},
 
 /* ========== 附錄（主持人用） ========== */
 {t:'附錄 A · 主持人操作頁', part:'附錄', time:'—', sec:true, html:
@@ -943,6 +998,8 @@ var SLIDES = [
 '<li><b>投影</b>：按右下角「⛶ 全螢幕」。簡報會自動依螢幕縮放，手機也能看。</li>'+
 '<li><b>計時器</b>：點右上角 ⏱ 開始／暫停，<b>雙擊歸零</b>。旁邊會顯示目前段落，超過 3 小時變紅。</li>'+
 '<li><b>三個關鍵動作點</b>：<br>① P2 情緒顏色分組（開場即完成分組）<br>② P38 手勢默契挑戰<br>③ 三個活動（P24 情緒地圖 · P37 情境辨識 · P44 我的第一週）</li>'+
+'<li><b>P53 延伸數位工具</b>：四個 QR 一起投影，請大家當場掃走再散場 —— 散場後就不會有人回來掃了。</li>'+
+'<li><b>P54 研習回饋</b>：Google 表單 QR。Q&amp;A 一開始就把這頁留在螢幕上，讓大家邊聽邊填，回收率最高。</li>'+
 '<li><b>不上傳任何資料</b>：兩個遊戲都在手機本機執行，不蒐集個資、不需要後台。</li>'+
 '<li><b>分組組數</b>：預設 6 組。要改成別的組數，網址加參數 <code>g1.html?g=8</code>。</li>'+
 '</ol>'+
@@ -961,7 +1018,7 @@ var SLIDES = [
 '<tr><td>01:10</td><td>—</td><td>休息（10′）</td><td>P25</td><td>休息；回座前做一次泡泡呼吸</td></tr>'+
 '<tr><td>01:20</td><td style="background:#e7eff8;font-weight:800;color:var(--mindful-d)">SKILLSET</td><td><b>四色語言 × 四顆膠囊</b>（45′）</td><td>P26–P39</td><td>活動二：情境辨識 ＋ 關卡② 手勢默契挑戰</td></tr>'+
 '<tr><td>02:05</td><td style="background:#fdece7;font-weight:800;color:var(--relate-d)">TOOLSET</td><td><b>一日導航與落地</b>（40′）</td><td>P40–P48</td><td>活動三：我的第一週 Check-in 課表</td></tr>'+
-'<tr><td>02:45</td><td>—</td><td><b>三層整合 ▸ 我的第一步 ▸ Check-out ▸ Q&amp;A</b>（15′）</td><td>P49–P53</td><td>寫下承諾；圍圈收尾；提問</td></tr>'+
+'<tr><td>02:45</td><td>—</td><td><b>三層整合 ▸ 我的第一步 ▸ Check-out ▸ 延伸工具 ▸ Q&amp;A</b>（15′）</td><td>P49–P54</td><td>寫下承諾；圍圈收尾；掃延伸工具 QR；填回饋表單；提問</td></tr>'+
 '</tbody></table></div>'+
 '<div class="grid g3" style="margin-top:16px">'+
 '<div class="qc energy"><h4><span class="ico">1</span>活動一 · P24</h4><p style="margin:0">我的情緒地圖（老師版）<br>個人 3′ ▸ 組內 5′ ▸ 跨組 10′</p></div>'+

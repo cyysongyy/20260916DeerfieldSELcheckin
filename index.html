@@ -96,6 +96,22 @@
 .qrbox .u{font-size:.78rem;font-weight:800;color:var(--muted);word-break:break-all;text-align:center;max-width:280px}
 .qrbox a.go{font-size:.82rem;font-weight:800;text-decoration:none;background:var(--ink);color:#fff;
   padding:.5em 1.2em;border-radius:999px}
+.linkgrid{display:grid;gap:clamp(12px,1.6vw,18px);grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:820px){.linkgrid{grid-template-columns:1fr}}
+.linkcard{background:#fff;border-radius:var(--r);box-shadow:var(--sh);padding:clamp(12px,1.6vw,18px);
+  display:grid;grid-template-columns:auto 1fr;gap:clamp(12px,1.6vw,18px);align-items:center;border-top:5px solid var(--line)}
+.linkcard .qrimg canvas{display:block}
+.linkcard h4{font-size:1.02em;margin-bottom:.25em;display:flex;gap:.4em;align-items:center}
+.linkcard .n{font-size:.72rem;font-weight:900;color:#fff;border-radius:999px;padding:.15em .6em;background:var(--ink);flex:none}
+.linkcard p{font-size:.88em;color:var(--ink2);margin:0 0 .4em}
+.linkcard .u{font-size:.72rem;font-weight:700;color:var(--muted);word-break:break-all;line-height:1.4}
+.linkcard a.go{display:inline-block;margin-top:.45em;font-size:.78rem;font-weight:800;text-decoration:none;
+  background:var(--ink);color:#fff;padding:.4em 1em;border-radius:999px}
+.linkcard.e{border-top-color:var(--energy)} .linkcard.e .n{background:var(--energy-d)}
+.linkcard.m{border-top-color:var(--mindful)} .linkcard.m .n{background:var(--mindful)}
+.linkcard.g{border-top-color:var(--reflect)} .linkcard.g .n{background:var(--reflect-d)}
+.linkcard.r{border-top-color:var(--relate)} .linkcard.r .n{background:var(--relate-d)}
+@media(max-width:520px){.linkcard{grid-template-columns:1fr;justify-items:center;text-align:center}}
 .bul{margin:0;padding-left:1.15em}
 .bul li{margin-bottom:.4em;font-size:.94em;color:var(--ink2)}
 .bul li b{color:var(--ink)}
@@ -177,9 +193,10 @@
     [].forEach.call(document.querySelectorAll('.mrow'),function(r){r.classList.toggle('cur',+r.dataset.k===k);});
     window.scrollTo(0,0);
     if(push!==false) history.replaceState(null,'','#s'+(k+1));
-    // lazy QR
-    var box=els[k].querySelector('[data-qr]');
-    if(box && !box.dataset.done){ drawQR(box); }
+    // lazy QR（一頁可有多個）
+    [].forEach.call(els[k].querySelectorAll('[data-qr]'),function(box){
+      if(!box.dataset.done) drawQR(box);
+    });
   }
   function baseURL(){
     var u=location.href.split('#')[0];
@@ -189,7 +206,9 @@
     var target=box.dataset.qr;
     var url = /^https?:/.test(target) ? target : baseURL()+target;
     var holder=box.querySelector('.qrimg');
-    QR.render(holder,url,{size:Math.min(300, Math.max(190, window.innerWidth*0.42))});
+    var base = box.dataset.size ? +box.dataset.size
+             : Math.min(300, Math.max(190, window.innerWidth*0.42));
+    QR.render(holder,url,{size:base});
     var u=box.querySelector('.u'); if(u) u.textContent=url.replace(/^https?:\/\//,'');
     var a=box.querySelector('a.go'); if(a) a.href=url;
     box.dataset.done='1';
