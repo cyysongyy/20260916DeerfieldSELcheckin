@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>關卡① 情緒顏色分組 ｜ SEL Check-in 工作坊</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+body{padding-bottom:60px}
+.hd{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);padding:10px 0}
+.hd .wrap{display:flex;align-items:center;gap:10px}
+.hd b{font-size:.92rem;flex:none}
+@media(max-width:520px){.hd b{font-size:.8rem}.tab{font-size:.7rem;padding:.35em .6em}}
+.tabs{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+.tab{font-size:.76rem;font-weight:800;padding:.4em .8em;border-radius:999px;background:#eef3f9;
+  border:1px solid var(--line);cursor:pointer;color:var(--ink2)}
+.tab.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pane{display:none;padding:clamp(16px,3vh,30px) 0}
+.pane.on{display:block}
+.pick{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(10px,2vw,16px)}
+@media(min-width:760px){.pick{grid-template-columns:repeat(4,1fr)}}
+.pk{border:0;cursor:pointer;font:inherit;color:#fff;border-radius:20px;padding:1.2em .8em;text-align:center;
+  box-shadow:var(--sh-lg);transition:transform .14s ease, box-shadow .14s ease}
+.pk:hover{transform:translateY(-3px)}
+.pk.sel{outline:4px solid var(--ink);outline-offset:3px}
+.pk .e{font-size:2.4rem;line-height:1}
+.pk h3{font-size:1.1rem;margin:.3em 0 .1em}
+.pk small{opacity:.94;font-size:.82rem}
+.r{background:linear-gradient(150deg,#ef6a5e,#d8433a)}
+.y{background:linear-gradient(150deg,#f4bc55,#dd9614)}
+.b{background:linear-gradient(150deg,#5a94cf,#255f9d)}
+.g{background:linear-gradient(150deg,#63c9a2,#2f9a72)}
+.field{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0}
+input[type=text],input[type=number],select,textarea{font:inherit;padding:.6em .8em;border-radius:12px;
+  border:1px solid var(--line);background:#fff;min-width:0}
+input[type=text]{flex:1;min-width:180px}
+.big{font-size:clamp(1.6rem,4.5vw,2.6rem);font-weight:900;letter-spacing:-.02em}
+.teamcard{border-radius:22px;padding:clamp(18px,3vw,30px);color:#fff;box-shadow:var(--sh-lg);
+  background:linear-gradient(150deg,#2b3a4d,#16202b);position:relative;overflow:hidden}
+.teamcard:after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;
+  background:rgba(255,255,255,.06)}
+.teamcard .lbl{font-size:.74rem;letter-spacing:.2em;font-weight:900;opacity:.7}
+.teamcard .no{font-size:clamp(3rem,12vw,5.5rem);font-weight:900;line-height:1;letter-spacing:-.04em}
+.teamcard .nm{font-size:1.3rem;font-weight:900;margin-top:.1em}
+.chipline{display:flex;gap:6px;flex-wrap:wrap;margin-top:.8em}
+.chipline span{background:rgba(255,255,255,.14);border-radius:999px;padding:.3em .8em;font-size:.8rem;font-weight:700}
+.grpbox{border-radius:16px;background:#fff;box-shadow:var(--sh);padding:.9em 1em;border-top:5px solid var(--ink)}
+.grpbox h4{font-size:1rem;display:flex;gap:.4em;align-items:center}
+.names{display:flex;flex-wrap:wrap;gap:6px;margin-top:.5em}
+.names span{background:#eef3f9;border-radius:999px;padding:.25em .7em;font-size:.85rem;font-weight:600}
+.bars{display:grid;gap:10px;margin-top:12px}
+.bar{display:grid;grid-template-columns:88px 1fr 46px;gap:10px;align-items:center;font-size:.9rem;font-weight:700}
+.bar .t{height:26px;border-radius:8px;min-width:4px;transition:width .4s ease}
+.hint{font-size:.9em;color:var(--ink2)}
+
+</style>
+</head>
+<body>
+<div class="hd"><div class="wrap">
+  <b>關卡① 情緒顏色分組</b>
+  <div class="tabs">
+    <div class="tab on" data-p="p1">我的 Check-in</div>
+    <div class="tab" data-p="p2">主持人分組器</div>
+    <div class="tab" data-p="p3">班級溫度統計</div>
+  </div>
+</div></div>
+
+<!-- ========== 學員 Check-in ========== -->
+<div class="pane on" id="p1"><div class="wrap">
+  <div id="s1">
+    <div class="eyebrow" style="font-size:.74rem;font-weight:900;letter-spacing:.18em;color:var(--muted)">STEP 1 · 不用解釋，只要感受</div>
+    <h1 class="big">你現在是什麼顏色？</h1>
+    <p class="hint" style="margin:.4em 0 1em">閉上眼睛三秒，感受一下。請選「真正有的顏色」，不是「應該有的顏色」。</p>
+    <div class="pick" id="pick">
+      <button class="pk r" data-c="0"><div class="e">😠</div><h3>紅 · 生氣</h3><small>燥熱｜界線被侵犯</small></button>
+      <button class="pk y" data-c="1"><div class="e">😰</div><h3>黃 · 焦慮</h3><small>溫熱｜心跳快、停不下來</small></button>
+      <button class="pk b" data-c="2"><div class="e">😢</div><h3>藍 · 難過</h3><small>寒冷｜失落、沒勁</small></button>
+      <button class="pk g" data-c="3"><div class="e">😊</div><h3>綠 · 平靜</h3><small>舒適｜有餘裕、可學習</small></button>
+    </div>
+    <div class="field">
+      <input type="text" id="myname" placeholder="你的名字或暱稱（不會上傳，只存在這支手機）" maxlength="16">
+      <button class="btn" id="go">產生我的組別 ▶</button>
+    </div>
+    <div class="card" style="margin-top:10px"><div class="hint">
+      <b>今天分組的方式是「異色組」</b> — 系統盡量讓每一組四種顏色都有人。
+      這是刻意的：等一下的工作坊需要不同狀態的視角，而真實的班級本來就是四種顏色混在一起的。
+    </div></div>
+  </div>
+
+  <div id="s2" style="display:none">
+    <div class="teamcard" id="tc"></div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card" id="advice"></div>
+      <div class="card" id="icebreak"></div>
+    </div>
+    <div class="field" style="margin-top:16px">
+      <button class="btn ghost" id="again">↺ 重新選一次</button>
+      <a class="btn ghost" href="index.html" style="text-decoration:none">回到簡報</a>
+      <a class="btn" href="g2.html" style="text-decoration:none">前往關卡② ▶</a>
+    </div>
+  </div>
+</div></div>
+
+<!-- ========== 主持人分組器 ========== -->
+<div class="pane" id="p2"><div class="wrap">
+  <h1 class="big">主持人分組器</h1>
+  <p class="hint">在自己的裝置上輸入名單，一鍵洗牌分組並投影。也可以直接拿去分班上的組。</p>
+  <div class="card" style="margin-top:12px">
+    <div class="field">
+      <label style="font-weight:800;font-size:.9rem">每組人數</label>
+      <input type="number" id="per" value="4" min="2" max="10" style="width:80px">
+      <label style="font-weight:800;font-size:.9rem">或指定組數</label>
+      <input type="number" id="ngrp" placeholder="留白" min="2" max="20" style="width:90px">
+      <button class="btn" id="shuffle">🎲 洗牌分組</button>
+      <button class="btn ghost" id="demo">帶入示範名單</button>
+    </div>
+    <textarea id="roster" rows="6" style="width:100%" placeholder="一行一個名字，或用逗號分隔。&#10;例：&#10;王小明&#10;陳美美&#10;林大同"></textarea>
+    <div class="hint" style="margin-top:.5em">組名採用辰光七大品格：堅毅 · 樂觀 · 熱情 · 自制 · 感恩 · 社交智慧 · 好奇心。</div>
+  </div>
+  <div class="grid g3" id="groups" style="margin-top:16px"></div>
+</div></div>
+
+<!-- ========== 班級溫度統計 ========== -->
+<div class="pane" id="p3"><div class="wrap">
+  <h1 class="big">班級溫度統計</h1>
+  <p class="hint">舉手數一數，輸入各顏色人數 → 立刻得到「今天這個班該用哪一顆膠囊」的建議。</p>
+  <div class="card" style="margin-top:12px">
+    <div class="grid g4">
+      <div><label style="font-weight:800;font-size:.9rem">😠 紅 · 生氣</label><input type="number" class="cnt" id="c0" value="0" min="0" style="width:100%"></div>
+      <div><label style="font-weight:800;font-size:.9rem">😰 黃 · 焦慮</label><input type="number" class="cnt" id="c1" value="0" min="0" style="width:100%"></div>
+      <div><label style="font-weight:800;font-size:.9rem">😢 藍 · 難過</label><input type="number" class="cnt" id="c2" value="0" min="0" style="width:100%"></div>
+      <div><label style="font-weight:800;font-size:.9rem">😊 綠 · 平靜</label><input type="number" class="cnt" id="c3" value="0" min="0" style="width:100%"></div>
+    </div>
+    <div class="bars" id="bars"></div>
+  </div>
+  <div class="card" id="rx" style="margin-top:16px"></div>
+</div></div>
+
+<script>
+var COLORS=[
+ {k:'紅',n:'生氣／憤怒',e:'😠',css:'r',hex:'#e4574c',
+  say:'告訴我們：有事情侵犯了我的界限，或違背了我的價值觀。',
+  fn:'保護自己 / 設定界限',
+  fix:['4-7-8 呼吸：吸 4 秒、憋 7 秒、呼 8 秒','暫時離開現場，給自己 5 分鐘','用「我感到憤怒，因為……」說出來'],
+  cap:'🌊 靜心覺察'},
+ {k:'黃',n:'焦慮／緊張',e:'😰',css:'y',hex:'#f0b03c',
+  say:'告訴我們：即將面對一件重要的事，我需要準備好。',
+  fn:'提高警覺 / 促進準備',
+  fix:['把擔心的事寫下來，拆成可行的小步驟','告訴自己「我有準備，我可以的」','找人預演一次，建立信心'],
+  cap:'🌊 靜心覺察 ＋ ⚡ 能量校準'},
+ {k:'藍',n:'憂鬱／難過',e:'😢',css:'b',hex:'#3d7fc1',
+  say:'告訴我們：我失去了珍視的東西，需要時間哀悼。',
+  fn:'深化連結 / 尋求支持',
+  fix:['找一個信任的人說說話','做一件小小讓自己舒服的事','允許自己難過，明天是新的一天'],
+  cap:'🤝 關係文化'},
+ {k:'綠',n:'開心／平靜',e:'😊',css:'g',hex:'#4fbf95',
+  say:'告訴我們：此刻是安全的，我可以盡情學習與創造。',
+  fn:'最佳學習狀態',
+  fix:['主動分享快樂，讓好心情感染身邊的人','把能量用來幫助需要的同學','善用這段狀態，把困難的事做完'],
+  cap:'💡 融入反思'}
+];
+var CHAR=['堅毅','樂觀','熱情','自制','感恩','社交智慧','好奇心'];
+var ICE=[
+ '今天早上出門前，你做的最後一件事是什麼？',
+ '這學期到目前為止，最讓你「有成就感」的一個小時刻？',
+ '你的班上最近讓你頭痛的一個畫面是什麼？（先不要講解決辦法）',
+ '如果明天能多出 30 分鐘，你會拿來做什麼？',
+ '你希望學生十年後記得你哪一句話？',
+ '上一次你在教室裡笑出來，是因為什麼事？',
+ '你最想跟同組的人「借」哪一個班級經營的招式？'
+];
+
+function $(s){return document.querySelector(s);}
+function $$(s){return [].slice.call(document.querySelectorAll(s));}
+
+/* tabs */
+$$('.tab').forEach(function(t){t.onclick=function(){
+  $$('.tab').forEach(function(x){x.classList.remove('on');});
+  $$('.pane').forEach(function(x){x.classList.remove('on');});
+  t.classList.add('on'); $('#'+t.dataset.p).classList.add('on'); window.scrollTo(0,0);
+};});
+
+/* ---------- 學員 check-in ---------- */
+var chosen=null;
+$$('.pk').forEach(function(b){b.onclick=function(){
+  $$('.pk').forEach(function(x){x.classList.remove('sel');});
+  b.classList.add('sel'); chosen=+b.dataset.c;
+};});
+
+function hash(s){var h=2166136261;for(var i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return (h>>>0);}
+
+var GN = (function(){ // 組數：可由網址 ?g=6 指定，預設 6 組
+  var m=location.search.match(/[?&]g=(\d+)/); return m? Math.max(2,Math.min(12,+m[1])) : 6;
+})();
+
+$('#go').onclick=function(){
+  if(chosen===null){alert('請先選一個顏色 🙂');return;}
+  var nm=($('#myname').value||'').trim()||'匿名夥伴';
+  // 異色分組：以顏色決定起點偏移，再用姓名雜湊在同色內散開
+  var seed=hash(nm+'|'+Date.now().toString().slice(-4));
+  var grp=((chosen + seed) % GN);
+  var C=COLORS[chosen];
+  $('#tc').innerHTML =
+    '<div class="lbl">YOUR TEAM</div>'+
+    '<div class="no">'+(grp+1)+'</div>'+
+    '<div class="nm">'+CHAR[grp%CHAR.length]+'組</div>'+
+    '<div class="chipline"><span>'+C.e+' '+C.k+' · '+C.n+'</span><span>'+nm+'</span><span>共 '+GN+' 組</span></div>'+
+    '<p style="margin-top:.9em;opacity:.85;font-size:.92rem">請帶著這張卡片，找到桌上標示「'+(grp+1)+'」的位置坐下。</p>';
+  $('#advice').innerHTML =
+    '<div class="tag" style="background:'+C.hex+'22;color:'+C.hex+'">'+C.e+' 你的顏色在說什麼</div>'+
+    '<h3 style="margin:.6em 0 .3em;font-size:1.15rem">'+C.k+'色 · '+C.n+'</h3>'+
+    '<p class="hint">'+C.say+'</p>'+
+    '<p class="hint"><b>功能：</b>'+C.fn+'</p>'+
+    '<p class="hint" style="margin-top:.6em"><b>30 秒可以做的三件事：</b></p>'+
+    '<ul style="margin:.3em 0 .6em 1.1em;padding:0" class="hint">'+C.fix.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>'+
+    '<div style="background:#f2f6fa;border-radius:12px;padding:.6em .8em;font-size:.9rem;font-weight:700">'+
+    '對應膠囊：'+C.cap+'</div>';
+  $('#icebreak').innerHTML =
+    '<div class="tag">組內破冰 · 每人 30 秒</div>'+
+    '<h3 style="margin:.6em 0 .3em;font-size:1.15rem">'+ICE[grp%ICE.length]+'</h3>'+
+    '<p class="hint">規則只有三條：<br>① 每人 30 秒，不打斷。<br>② 說完之後，下一位先說「你說的是○○○的意思」。<br>③ 不評論、不給建議。</p>'+
+    '<p class="hint" style="margin-top:.6em">—— 這就是「圍圈」的最小版本，也是你今天學到的第一個 <b>🤝 關係文化</b> 招式。</p>';
+  $('#s1').style.display='none'; $('#s2').style.display='block'; window.scrollTo(0,0);
+};
+$('#again').onclick=function(){$('#s2').style.display='none';$('#s1').style.display='block';window.scrollTo(0,0);};
+
+/* ---------- 主持人分組器 ---------- */
+function doShuffle(){
+  var raw=$('#roster').value.split(/[\n,、，]+/).map(function(s){return s.trim();}).filter(Boolean);
+  if(!raw.length){$('#groups').innerHTML='<div class="card">請先貼上名單 🙂</div>';return;}
+  for(var i=raw.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=raw[i];raw[i]=raw[j];raw[j]=t;}
+  var n=+$('#ngrp').value||0, per=+$('#per').value||4;
+  var G = n>0 ? n : Math.max(1,Math.round(raw.length/per));
+  var out=[]; for(var k=0;k<G;k++) out.push([]);
+  raw.forEach(function(nm,idx){out[idx%G].push(nm);});
+  $('#groups').innerHTML=out.map(function(g,i){
+    return '<div class="grpbox" style="border-top-color:'+COLORS[i%4].hex+'">'+
+      '<h4>第 '+(i+1)+' 組 · '+CHAR[i%CHAR.length]+'組 <span style="margin-left:auto;font-size:.8rem;color:var(--muted)">'+g.length+' 人</span></h4>'+
+      '<div class="names">'+g.map(function(x){return '<span>'+x+'</span>';}).join('')+'</div>'+
+      '<div class="hint" style="margin-top:.6em;font-size:.85rem">破冰題：'+ICE[i%ICE.length]+'</div></div>';
+  }).join('');
+}
+$('#shuffle').onclick=doShuffle;
+$('#demo').onclick=function(){
+  $('#roster').value='王小明, 陳美美, 林大同, 李佳穎, 張志豪, 黃淑芬, 吳建宏, 蔡雅婷, 鄭文彥, 劉家豪, 許雅玲, 楊承翰, 周宜蓁, 何冠廷, 曾郁婷, 賴俊傑';
+  doShuffle();
+};
+
+/* ---------- 班級溫度統計 ---------- */
+function draw(){
+  var v=[0,1,2,3].map(function(i){return Math.max(0,+$('#c'+i).value||0);});
+  var tot=v.reduce(function(a,b){return a+b;},0)||1;
+  $('#bars').innerHTML=v.map(function(x,i){
+    return '<div class="bar"><span>'+COLORS[i].e+' '+COLORS[i].k+'</span>'+
+      '<span class="t" style="width:'+(x/tot*100)+'%;background:'+COLORS[i].hex+'"></span>'+
+      '<span style="text-align:right">'+x+'</span></div>';
+  }).join('');
+  var hi=v.indexOf(Math.max.apply(null,v));
+  var lowEnergy = v[2]/tot;         // 藍
+  var arousal = (v[0]+v[1])/tot;    // 紅+黃
+  var green = v[3]/tot;
+  var t,d;
+  if(arousal>=0.4){t='🌊 靜心覺察 ＋ 🤝 關係文化';
+    d='教室裡有超過四成的人處在高頻狀態（紅／黃）。請先讓生理沉降：泡泡呼吸 ×3 或閉眼靜坐 20 秒，接著做一次「感謝一件小事」修復人際網格，再開始上課。<b>順序不能反</b> —— 還在喘、還在生氣的身體，聽不進任何關係語言。';}
+  else if(lowEnergy>=0.35){t='⚡ 能量校準 ＋ 💡 融入反思';
+    d='低頻的人偏多（藍）。先把狀態拉上基準線：全體站起來大字形伸展 ×2，或用五指比出今天的電量。接著問一個指向未來的問題（「這節課你最想學會什麼？」），讓能量有地方去。';}
+  else if(green>=0.6){t='💡 融入反思（可直接進入學科）';
+    d='班級狀態良好，超過六成在綠區 —— 這是最佳學習狀態，不要浪費它。用 30 秒做一次 Re-connect：「今天我們要做的是＿＿＿，準備好了嗎？」然後把最難的內容放在這一段。';}
+  else {t='🤝 關係文化 ＋ 🌊 靜心覺察';
+    d='顏色分佈分散，代表班上同時有不同狀態的孩子。這時候最有效的是<b>先建立安全感</b>：讓每個人比出自己的顏色，老師只說「我看到了」。接著用一次共同的呼吸，把全班拉到同一個頻率上。';}
+  $('#rx').innerHTML='<div class="tag">今天這個班的處方</div>'+
+    '<h3 style="margin:.6em 0 .4em;font-size:1.25rem">'+t+'</h3>'+
+    '<p class="hint">'+d+'</p>'+
+    '<p class="hint" style="margin-top:.7em;color:var(--muted)">最多人選的是 '+COLORS[hi].e+' '+COLORS[hi].k+'色（'+v[hi]+' 人 / 共 '+(tot)+' 人）。'+
+    '提醒：這是覺察工具，不是評分工具 —— 沒有對錯，只有誠實。</p>';
+}
+$$('.cnt').forEach(function(x){x.oninput=draw;});
+draw();
+</script>
+</body>
+</html>

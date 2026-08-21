@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>關卡② 手勢默契挑戰 ｜ SEL Check-in 工作坊</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+body{padding-bottom:40px}
+.hd{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);padding:9px 0}
+.hd .wrap{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hd b{font-size:.9rem}
+.stat{margin-left:auto;display:flex;gap:6px}
+.stat span{font-size:.76rem;font-weight:900;padding:.35em .8em;border-radius:999px;background:#eef3f9;border:1px solid var(--line)}
+.stat .sc{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pbar{height:4px;background:#dde4ec}
+.pbar i{display:block;height:100%;background:linear-gradient(90deg,var(--energy),var(--relate),var(--mindful));width:0;transition:width .3s}
+.stage{padding:clamp(16px,3vh,28px) 0}
+.rnd{font-size:.74rem;font-weight:900;letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.q{font-size:clamp(1.15rem,2.4vw + .4rem,1.7rem);font-weight:900;letter-spacing:-.01em;margin:.35em 0 .2em;line-height:1.35}
+.qsub{color:var(--muted);font-size:.92rem;margin-bottom:1em}
+.qimg{border-radius:16px;box-shadow:var(--sh-lg);width:100%;max-width:520px;margin:0 auto 16px}
+.opts{display:grid;gap:10px}
+@media(min-width:700px){.opts.two{grid-template-columns:1fr 1fr}}
+.opt{text-align:left;font:inherit;cursor:pointer;border:1px solid var(--line);background:#fff;
+  border-radius:16px;padding:.85em 1em;box-shadow:var(--sh);display:flex;gap:.7em;align-items:flex-start;
+  transition:transform .1s ease,border-color .15s}
+.opt:hover{transform:translateY(-2px);border-color:#b9c7d8}
+.opt .k{font-weight:900;font-size:.8rem;background:#eef3f9;border-radius:8px;padding:.2em .55em;flex:none;margin-top:.15em}
+.opt.ok{border-color:var(--reflect);background:#eefaf4}
+.opt.ok .k{background:var(--reflect);color:#fff}
+.opt.no{border-color:var(--relate);background:#fdf0ec}
+.opt.no .k{background:var(--relate);color:#fff}
+.opt.dim{opacity:.5}
+.opt[disabled]{cursor:default;transform:none}
+.expl{margin-top:14px;background:#fff;border-left:5px solid var(--mindful);border-radius:0 14px 14px 0;
+  padding:.85em 1.05em;box-shadow:var(--sh);display:none}
+.expl.on{display:block;animation:pop .28s ease both}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.expl h4{font-size:1rem;margin-bottom:.3em}
+.expl p{font-size:.93rem;color:var(--ink2);margin:0}
+.nextrow{display:flex;gap:10px;margin-top:16px;align-items:center;flex-wrap:wrap}
+.hero{text-align:center;padding:clamp(20px,6vh,60px) 0}
+.hero .medal{font-size:clamp(3.4rem,14vw,6rem);line-height:1}
+.hero h1{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;margin:.2em 0}
+.hero p{max-width:52ch;margin-left:auto;margin-right:auto;overflow-wrap:anywhere}
+.scorebig{font-size:clamp(3rem,12vw,5rem);font-weight:900;letter-spacing:-.04em;line-height:1;color:var(--dawn)}
+.rev{text-align:left;margin-top:20px}
+.rev .item{background:#fff;border-radius:14px;box-shadow:var(--sh);padding:.8em 1em;margin-bottom:8px;font-size:.92rem}
+.rev .item b{color:var(--relate-d)}
+.gest{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.gest{grid-template-columns:repeat(5,1fr)}}
+.gest figure{margin:0;background:#fff;border-radius:14px;box-shadow:var(--sh);overflow:hidden}
+.gest img{width:100%;display:block}
+.gest figcaption{font-size:.82rem;font-weight:800;padding:.5em .6em;text-align:center}
+</style>
+</head>
+<body>
+<div class="hd"><div class="wrap">
+  <b>關卡② 手勢默契挑戰</b>
+  <div class="stat">
+    <span id="qn">1 / 16</span>
+    <span id="tm">⏱ 0:00</span>
+    <span class="sc" id="sc">0 分</span>
+  </div>
+</div></div>
+<div class="pbar"><i id="pb"></i></div>
+
+<div class="wrap stage" id="app"></div>
+
+<script>
+/* ===== 題庫 ===== */
+var Q=[
+/* ---------- ROUND 1 · 看圖辨手勢 ---------- */
+{r:'ROUND 1 · 看圖辨手勢',img:'assets/g1.jpg',
+ q:'這個手勢，在辰光代表什麼？',
+ o:['全體安靜（Silence）','我有話要說','Eyes on me','退一步想一想（BTT）'],a:0,
+ e:'手舉拳頭＝Silence。當教室很吵時，聲音是最沒效率的工具 —— 你必須比噪音更大聲。手勢不需要跟噪音競爭，而且它<b>不帶語氣</b>：同一句「安靜！」可以是溫和的也可以是暴怒的，但舉起的拳頭永遠是中性的。'},
+{r:'ROUND 1 · 看圖辨手勢',img:'assets/g2.jpg',
+ q:'手舉高、握拳比出食指 —— 這是？',
+ o:['我需要幫忙','我有話要說','安靜','我準備好了'],a:1,
+ e:'這是唯一一個<b>學生也能對老師使用</b>的手勢。當孩子開始用它，班級經營就從「管理」變成了「對話」—— 而愛插話的孩子，往往只是還沒有一個被允許的方式。'},
+{r:'ROUND 1 · 看圖辨手勢',img:'assets/g3.jpg',
+ q:'走廊上的這一幕，用的是哪一個手勢？',
+ o:['靜坐思考','Eyes on you','BTT（Back–Think–Tell）','全體安靜'],a:2,
+ e:'BTT ＝ <b>Back 退一步 · Think 想一想 · Tell 再說出來</b>。它把「立刻反應」變成「延後回應」，是整套手勢裡唯一一個處理<b>衝突當下</b>的工具，也是最難但最值得練的一個。'},
+{r:'ROUND 1 · 看圖辨手勢',img:'assets/g4.jpg',
+ q:'老師比出這個手勢並說了一句話，全班要回什麼？',
+ o:['Eyes on you','I am ready','Yes, teacher','Silence, please'],a:0,
+ e:'老師說 <b>Eyes on me</b>，學生回 <b>Eyes on you</b>。這個「一呼一應」的設計是關鍵 —— 它不只要求注意力，還要求一個<b>回應動作</b>，讓每個孩子都必須從被動變主動。'},
+{r:'ROUND 1 · 看圖辨手勢',img:'assets/g5.jpg',
+ q:'辰光的規定是：只要遇到這個情況，就先做這件事 ——',
+ o:['只要下課，就先喝水','只要集會，就先閉眼靜坐','只要考試，就先深呼吸','只要吵架，就先分開'],a:1,
+ e:'「只要集會，就先閉眼靜坐。」<b>等待不是浪費時間，等待本身就是課程。</b>把一件每天都會發生的事（集合）變成固定儀式，是最省力的文化建立方式 —— 不用另外找時間。'},
+
+/* ---------- ROUND 2 · 手勢情境快問 ---------- */
+{r:'ROUND 2 · 手勢情境快問',
+ q:'分組討論的音量越來越大，你需要在 3 秒內讓全班停下來。',
+ o:['大聲喊「安靜！」','舉起拳頭（Silence），等待','拍桌子','關燈'],a:1,
+ e:'喊叫會讓教室的音量基準線<b>越拉越高</b>——今天你要喊到 80 分貝，下個月就要 90。手勢則相反：它靠的是「等待」，而等待會讓先安靜的孩子成為班級的示範者。'},
+{r:'ROUND 2 · 手勢情境快問',
+ q:'一個孩子在走廊被撞到，馬上就要回嗆對方。你在旁邊。',
+ o:['BTT — 退一步、想一想、再說出來','Silence — 先要求他安靜','靜坐思考 — 請他坐下','Eyes on me — 要求他看你'],a:0,
+ e:'衝突當下，孩子需要的不是「閉嘴」，而是<b>一個延遲的動作</b>。BTT 給的正是那三秒鐘 —— 而那三秒鐘，往往就是「事件」與「事故」的分界線。'},
+{r:'ROUND 2 · 手勢情境快問',
+ q:'你要開始講解重點，但有五、六個人還在看窗外、翻課本。',
+ o:['直接開始講，講到他們發現','舉拳頭要求安靜','Eyes on me → 等全班回應 Eyes on you','走過去敲他們的桌子'],a:2,
+ e:'安靜 ≠ 注意力。教室可能<b>很安靜但沒有人在看你</b>。Silence 處理音量，Eyes on me 處理視線 —— 兩者要分開用，這是最多老師混用的一組。'},
+{r:'ROUND 2 · 手勢情境快問',
+ q:'有個孩子一直插話。但你知道他其實真的有想法。',
+ o:['告訴他「等一下再說」','示範「我有話要說」的手勢，然後點他','忽略他，繼續上課','請他到教室後面站一下'],a:1,
+ e:'插話不是品行問題，多半是<b>還沒有一個被允許的管道</b>。給他手勢，等於給他一條合法的路 —— 而且下一次，他會自己用。'},
+{r:'ROUND 2 · 手勢情境快問',
+ q:'全校集會，各班隊伍剛剛到定位，現場還有些浮動。',
+ o:['靜坐思考 — 閉眼安靜，專注呼吸','Eyes on me','BTT','我有話要說'],a:0,
+ e:'辰光圍圈的「三個一致性」：<b>前（整隊帶隊）→ 中（閉眼精心等候）→ 後（PDCA 或 4F 引導）</b>。中間那一段最容易被跳過，但它決定了後面的引導有沒有人聽得進去。'},
+
+/* ---------- ROUND 3 · 膠囊與 COMBO 診斷 ---------- */
+{r:'ROUND 3 · 膠囊與 COMBO 診斷',
+ q:'體育課後第一節自然課：全班還在喘，兩個人在吵剛剛的比分。',
+ o:['⚡ 能量校準 ＋ 💡 融入反思','🌊 靜心覺察 ＋ 🤝 關係文化','💡 融入反思 ＋ 🤝 關係文化','直接上課，講快一點'],a:1,
+ e:'高頻狀態要<b>先往下壓</b>（靜心），把生理放下來之後，再處理剛剛的摩擦（關係）。COMBO 的鐵則：<b>永遠先生理，後心理</b> —— 一個還在喘、還在生氣的身體，聽不進任何關係語言。'},
+{r:'ROUND 3 · 膠囊與 COMBO 診斷',
+ q:'連假後的星期一早自習：一半的人趴著，叫了兩次都沒人回話。',
+ o:['🌊 靜心覺察 ＋ 🌊 再一次靜心','⚡ 能量校準 ＋ 💡 融入反思','🤝 關係文化 ＋ 🌊 靜心覺察','🌊 靜心覺察 ＋ ⚡ 能量校準'],a:1,
+ e:'低頻狀態再做深呼吸，只會讓他們更想睡。要<b>先把能量拉上來</b>（大字形伸展、五指電量），再用一個指向未來的問題把注意力接到今天（「這禮拜你最想完成什麼？」）。'},
+{r:'ROUND 3 · 膠囊與 COMBO 診斷',
+ q:'班上剛發生衝突，氣氛很冷，有人紅著眼睛，其他人在看戲。你這節課要上數學。',
+ o:['立刻處理衝突，把當事人叫出來講清楚','🌊 靜心 20 秒 → 心裡選一個顏色 → 宣布下課再處理，先上課','當作沒發生，直接開始上課','讓全班討論剛剛發生什麼事'],a:1,
+ e:'Check-in 的目的<b>不是解決衝突，是保住剩下 26 個孩子的學習權</b>。把事件推到下課處理不是逃避，是分流。「現在每個人心裡選一個顏色，不用說出來」——這一句同時完成了覺察與界線。'},
+{r:'ROUND 3 · 膠囊與 COMBO 診斷',
+ q:'放學前最後一節，孩子累了、躁了、歸心似箭。',
+ o:['💡 融入反思 ＋ 🤝 關係文化','⚡ 能量校準 ＋ ⚡ 再一次能量','🌊 靜心覺察 ＋ 💡 融入反思','什麼都不做，讓他們收書包'],a:0,
+ e:'最後一節不要再拉能量了 —— 那會讓他們更難收心。用「今天你帶走了什麼？」把一天<b>打包</b>，再用一句謝謝把正向情緒帶回家。這是辰光十週實錄裡最受學生歡迎的一段。'},
+{r:'ROUND 3 · 膠囊與 COMBO 診斷',
+ q:'關於 Check-in，下面哪一句是<b>錯的</b>？',
+ o:['它是覺察工具，沒有對錯，只有誠實','孩子舉紅色時，老師只要說「我看到了」就好','老師應該當場處理每一個舉紅色的孩子','30 秒的動作比 15 分鐘的完美活動更容易變成文化'],a:2,
+ e:'急著處理，反而讓孩子下次不敢說。Check-in 是<b>覺察工具，不是輔導轉介</b>。你只需要讓他知道「我看到了」—— 被看見本身，就已經是一種調節。'},
+{r:'ROUND 3 · 膠囊與 COMBO 診斷',
+ q:'課堂四步驟裡，最常被老師跳過、但最關鍵的是哪一步？',
+ o:['Check-in（覺察當下）','Reset（重置）','Re-connect（再連結學科）','Check-out（整理帶走）'],a:2,
+ e:'很多人做完深呼吸就直接開始上課 —— 學生安靜了，但情緒沒有接上學科。<b>情緒轉換 ＝ 重置內在 × 再連結學習</b>，注意是「×」不是「＋」：只做重置而沒有再連結，等於乘以零。'}
+];
+
+/* ===== 遊戲 ===== */
+var i=0, score=0, wrong=[], t0=Date.now(), qStart=0;
+var app=document.getElementById('app');
+function $(id){return document.getElementById(id);}
+setInterval(function(){
+  var s=Math.floor((Date.now()-t0)/1000);
+  $('tm').textContent='⏱ '+Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+},1000);
+
+function render(){
+  if(i>=Q.length){return finish();}
+  var q=Q[i];
+  $('qn').textContent=(i+1)+' / '+Q.length;
+  $('pb').style.width=(i/Q.length*100)+'%';
+  app.innerHTML=
+    '<div class="rnd">'+q.r+'</div>'+
+    '<h2 class="q">'+q.q+'</h2>'+
+    (q.img?'<img class="qimg" src="'+q.img+'" alt="手勢圖卡">':'<div class="qsub">選出你認為最適合的一個。答錯不扣分，但速度會影響分數。</div>')+
+    '<div class="opts'+(q.o.length>3&&!q.img?' two':'')+'" id="opts">'+
+      q.o.map(function(o,k){return '<button class="opt" data-k="'+k+'"><span class="k">'+'ABCD'[k]+'</span><span>'+o+'</span></button>';}).join('')+
+    '</div>'+
+    '<div class="expl" id="expl"></div>'+
+    '<div class="nextrow" id="nrow"></div>';
+  qStart=Date.now();
+  [].forEach.call(document.querySelectorAll('.opt'),function(b){b.onclick=function(){answer(+b.dataset.k);};});
+  window.scrollTo(0,0);
+}
+function answer(k){
+  var q=Q[i], ok=(k===q.a);
+  var sec=(Date.now()-qStart)/1000;
+  var bonus= ok ? Math.max(0, Math.round(5 - sec/4)) : 0;
+  if(ok) score += 10 + bonus; else wrong.push({q:q.q, right:q.o[q.a], mine:q.o[k]});
+  $('sc').textContent=score+' 分';
+  [].forEach.call(document.querySelectorAll('.opt'),function(b){
+    var kk=+b.dataset.k; b.disabled=true;
+    if(kk===q.a) b.classList.add('ok');
+    else if(kk===k) b.classList.add('no');
+    else b.classList.add('dim');
+  });
+  var ex=$('expl');
+  ex.innerHTML='<h4>'+(ok?'✅ 答對了'+(bonus?'（速度加 '+bonus+' 分）':''):'💡 正解：'+q.o[q.a])+'</h4><p>'+q.e+'</p>';
+  ex.classList.add('on');
+  ex.style.borderLeftColor = ok ? 'var(--reflect)' : 'var(--relate)';
+  $('nrow').innerHTML='<button class="btn" id="nx">'+(i===Q.length-1?'看成績 ▶':'下一題 ▶')+'</button>'+
+    '<span style="font-size:.85rem;color:var(--muted)">已完成 '+(i+1)+' / '+Q.length+'</span>';
+  $('nx').onclick=function(){i++;render();};
+  $('nx').focus();
+}
+function finish(){
+  $('pb').style.width='100%';
+  $('qn').textContent=Q.length+' / '+Q.length;
+  var max=Q.length*15, pct=score/max;
+  var medal,title,say;
+  if(pct>=.85){medal='🏆';title='默契滿分 · 導航員';say='你已經可以直接帶全校做這件事了。下一步：找一位同事，一起做同一個動作一個月。';}
+  else if(pct>=.65){medal='🥈';title='穩定上手 · 領航員';say='觀念都對，只差重複。挑一個時段、一顆膠囊，先自己做滿五天。';}
+  else if(pct>=.45){medal='🥉';title='正在校準 · 見習生';say='回頭看一下「狀態診斷與處方矩陣」那一頁 —— 先學會診斷，處方自然會對。';}
+  else {medal='🌱';title='剛剛開機 · 新手';say='沒關係，今天的重點本來就不是答對。挑一句你記得住的話帶回去，比答對十題有用。';}
+  app.innerHTML=
+    '<div class="hero">'+
+    '<div class="medal">'+medal+'</div>'+
+    '<div class="scorebig">'+score+'</div>'+
+    '<div style="color:var(--muted);font-weight:800;font-size:.9rem">滿分 '+max+' 分 · 答對 '+(Q.length-wrong.length)+' / '+Q.length+' 題</div>'+
+    '<h1>'+title+'</h1>'+
+    '<p style="color:var(--ink2)">'+say+'</p>'+
+    '<div class="nextrow" style="justify-content:center">'+
+      '<button class="btn" id="rt">↺ 再玩一次</button>'+
+      '<a class="btn ghost" href="index.html" style="text-decoration:none">回到簡報</a>'+
+      '<a class="btn ghost" href="g1.html" style="text-decoration:none">關卡①</a>'+
+    '</div>'+
+    (wrong.length?('<div class="rev"><h3 style="font-size:1.05rem;margin-bottom:.6em">📌 錯題回顧</h3>'+
+      wrong.map(function(w){return '<div class="item">'+w.q+'<br><b>正解：'+w.right+'</b><span style="color:var(--muted)">（你選了：'+w.mine+'）</span></div>';}).join('')+
+      '</div>'):'')+
+    '<div class="rev"><h3 style="font-size:1.05rem;margin:1.2em 0 .6em">✋ 辰光五種手勢 · 帶回教室</h3>'+
+      '<div class="gest">'+
+      '<figure><img src="assets/g1.jpg" alt=""><figcaption>① 手舉拳頭<br>Silence</figcaption></figure>'+
+      '<figure><img src="assets/g2.jpg" alt=""><figcaption>② 握拳比食指<br>我有話要說</figcaption></figure>'+
+      '<figure><img src="assets/g3.jpg" alt=""><figcaption>③ BTT<br>Back–Think–Tell</figcaption></figure>'+
+      '<figure><img src="assets/g4.jpg" alt=""><figcaption>④ Eyes on me<br>Eyes on you</figcaption></figure>'+
+      '<figure><img src="assets/g5.jpg" alt=""><figcaption>⑤ 靜坐思考<br>Sit and settle</figcaption></figure>'+
+      '</div>'+
+      '<p style="font-size:.9rem;color:var(--ink2);margin-top:.8em">如果只能先挑兩個：<b>Silence 與 Eyes on me</b>。全校導師統一用一學期，就足以改變一所學校的音量。</p>'+
+    '</div>'+
+    '</div>';
+  document.getElementById('rt').onclick=function(){i=0;score=0;wrong=[];t0=Date.now();$('sc').textContent='0 分';render();};
+  window.scrollTo(0,0);
+}
+render();
+</script>
+</body>
+</html>
