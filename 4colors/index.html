@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>四色情緒溫度計工作坊 ｜ 90 分鐘（Check-in · 介紹 · 實作 · 回饋）</title>
-<meta name="description" content="90 分鐘四色情緒溫度計工作坊：Check-in、介紹四色情緒語言、學員動手製作專屬情緒溫度計、回饋收尾。獨立於主課程，可單獨連結使用。">
+<title>四色情緒溫度計工作坊 ｜ 約 100 分鐘（Check-in · 介紹 · 實作 · 回饋）</title>
+<meta name="description" content="約 100 分鐘四色情緒溫度計工作坊：CASEL 五大核心能力、命名情緒的心理學原理、身體訊號覺察、四色情緒語言、學員動手製作專屬情緒溫度計、社會覺察加碼活動、回饋收尾。獨立於主課程，可單獨連結使用。">
 <link rel="stylesheet" href="assets/style.css">
 <style>
 /* ===== 簡報骨架（沿用 SEL Check-in 導航員的版型系統）===== */
@@ -57,6 +57,7 @@
 .qc.mindful{border-top-color:var(--mindful)} .qc.mindful .ico{background:var(--mindful)} .qc.mindful .use{background:#e7eff8;color:var(--mindful-d)}
 .qc.reflect{border-top-color:var(--reflect)} .qc.reflect .ico{background:var(--reflect)} .qc.reflect .use{background:#e4f6ee;color:var(--reflect-d)}
 .qc.relate{border-top-color:var(--relate)} .qc.relate .ico{background:var(--relate)} .qc.relate .use{background:#fdece7;color:var(--relate-d)}
+.qc.neutral{border-top-color:var(--dawn)} .qc.neutral .ico{background:var(--dawn)} .qc.neutral .use{background:#fff3ea;color:#b9601c}
 
 /* 步驟 */
 .steps{display:grid;gap:12px;grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -138,7 +139,7 @@
 <div class="topbar">
   <div class="bar-title">四色 <b>情緒溫度計</b> 工作坊 · Check-in ▸ 介紹 ▸ 實作 ▸ 回饋</div>
   <div class="spacer"></div>
-  <div class="chip" id="clock" title="點一下開始／暫停 90 分鐘計時">⏱ 00:00</div>
+  <div class="chip" id="clock" title="點一下開始／暫停 100 分鐘計時">⏱ 00:00</div>
   <div class="chip" id="segchip" title="目前段落">開場</div>
   <div class="chip" id="menubtn">目錄</div>
 </div>
@@ -229,7 +230,7 @@
     if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.7){ show(dx<0?i+1:i-1); }
   },{passive:true});
 
-  // 計時器（90 分鐘課程，超過即提示）
+  // 計時器（約 100 分鐘課程，超過即提示）
   var t0=null, acc=0, tick=null;
   function fmt(ms){var s=Math.floor(ms/1000);return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');}
   var clock=document.getElementById('clock');
@@ -238,7 +239,7 @@
     else{t0=Date.now();clock.classList.add('live');
       tick=setInterval(function(){
         var ms=acc+(Date.now()-t0); clock.textContent='⏱ '+fmt(ms);
-        clock.classList.toggle('warn', ms>90*60*1000);
+        clock.classList.toggle('warn', ms>100*60*1000);
       },1000);}
   };
   clock.ondblclick=function(){acc=0;t0=Date.now();clock.textContent='⏱ 00:00';};
