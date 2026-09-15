@@ -202,7 +202,8 @@ var SLIDES = [
 '<div class="step"><span class="n">1 MIN</span><h4>Check-out 帶走一句</h4><p>中文說感受，英語喊口號。</p><div class="say">我現在覺得＿＿＿。　I can do it!</div></div>'+
 '</div>'+
 '<div class="note blue">成本：<b>一份 5 張的簡報</b>，由老師輪流做。時間：晨會 5 分鐘。'+
-'留空句型（When I feel ___, I ___）是整件事的引擎 —— 每個孩子填的答案都不一樣，那不是背誦，是表達。</div>'},
+'留空句型（When I feel ___, I ___）是整件事的引擎 —— 每個孩子填的答案都不一樣，那不是背誦，是表達。'+
+'<br><a href="https://drive.google.com/drive/u/0/folders/1qkkCAOfK9ttR2vgOpKGc31WQZlQAZFTs" target="_blank" rel="noopener" style="display:inline-block;margin-top:.5em;font-size:.86em;font-weight:800;color:var(--mindful);text-decoration:none">📁 週一辰光簡報範例資料夾 →</a></div>'},
 
 {t:'課堂現場：十週 Check-in / Check-out', part:'I DO 辰光現場', time:'00:34', html:
 '<div class="eyebrow">辰光國小 · 陳英曉主任 ｜ 授課班級：五甲、六甲 ｜ 融入學科：體育、自然</div>'+
