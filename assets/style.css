@@ -1,0 +1,52 @@
+/* ===== SEL Check-in 工作坊 · 共用樣式 ===== */
+:root{
+  --bg:#eaeef3; --bg2:#f6f8fb; --card:#ffffff;
+  --ink:#182230; --ink2:#3d4c5e; --muted:#6b7b8d; --line:#dde4ec;
+  --energy:#F0B03C; --energy-d:#b9821c;
+  --mindful:#1F5FA8; --mindful-d:#12406f;
+  --reflect:#4FBF95; --reflect-d:#2b8465;
+  --relate:#EC6A4B; --relate-d:#b8462b;
+  --dawn:#FF8A3D;
+  --red:#E4574C; --yellow:#F0B03C; --blue:#3D7FC1; --green:#4FBF95;
+  --sh: 0 1px 2px rgba(20,35,55,.05), 0 8px 24px rgba(20,35,55,.07);
+  --sh-lg: 0 2px 6px rgba(20,35,55,.06), 0 18px 48px rgba(20,35,55,.12);
+  --r:18px;
+  --fs:clamp(15px,1.05vw + 8px,20px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(1200px 600px at 12% -10%, #ffffff 0%, rgba(255,255,255,0) 60%),
+    radial-gradient(900px 500px at 100% 0%, #fff6ec 0%, rgba(255,255,255,0) 55%),
+    var(--bg);
+  color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+  font-size:var(--fs); line-height:1.65; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;line-height:1.25;letter-spacing:-.01em}
+p{margin:0 0 .6em}
+b,strong{font-weight:700}
+a{color:var(--mindful)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,3vw,34px)}
+.card{background:var(--card);border-radius:var(--r);box-shadow:var(--sh);padding:clamp(16px,2vw,26px)}
+.grid{display:grid;gap:clamp(12px,1.6vw,20px)}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.tag{display:inline-block;font-size:.72em;font-weight:800;letter-spacing:.14em;
+  padding:.32em .85em;border-radius:999px;background:#e6ecf4;color:var(--ink2)}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:700;
+  padding:.7em 1.35em;border-radius:999px;background:var(--ink);color:#fff;
+  box-shadow:var(--sh);transition:transform .12s ease, filter .12s ease}
+.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:translateY(1px)}
+img{max-width:100%;height:auto;display:block}
+.shot{border-radius:14px;box-shadow:var(--sh);background:#fff;width:100%}
+table{border-collapse:collapse;width:100%;font-size:.88em}
+th,td{padding:.55em .7em;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{background:#f2f6fa;font-weight:800;color:var(--ink2);white-space:nowrap}
+tbody tr:nth-child(even){background:#fafcfe}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
