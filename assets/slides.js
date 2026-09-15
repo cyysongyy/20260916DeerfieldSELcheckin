@@ -79,7 +79,8 @@ var SLIDES = [
 '<div class="tag" style="background:#ffe9d9;color:#a5501f">00:15 · I DO ｜ BEFORE SEL</div>'+
 '<h3 style="margin:.55em 0 .3em;font-size:1.15em">🌡️ 辰光 SEL 現場</h3>'+
 '<p style="font-size:.92em;color:var(--ink2)">Check-in 在一所學校裡長什麼樣子？三年的路、五種手勢、十週實錄。</p>'+
-'<div class="use" style="background:#fff3e8;color:#a5501f;font-size:.82em;font-weight:700;border-radius:10px;padding:.45em .7em;margin-top:.5em">25 分鐘 · 先看見，再談方法</div></div>'+
+'<div class="use" style="background:#fff3e8;color:#a5501f;font-size:.82em;font-weight:700;border-radius:10px;padding:.45em .7em;margin-top:.5em">25 分鐘 · 先看見，再談方法</div>'+
+'<a href="https://drive.google.com/drive/u/0/folders/16Q5HkH54lAXg4kyiu8R4jBBHhLAywZtw" target="_blank" rel="noopener" style="display:inline-block;margin-top:.5em;font-size:.78em;font-weight:800;color:var(--mindful);text-decoration:none">📁 校本 Check-in × SEL 資料夾 →</a></div>'+
 '<div class="card" style="border-top:6px solid var(--energy)">'+
 '<div class="tag" style="background:#fdf3e0;color:var(--energy-d)">00:40 · I DO ｜ MINDSET</div>'+
 '<h3 style="margin:.55em 0 .3em;font-size:1.15em">🌱 為什麼情緒教育很重要</h3>'+
