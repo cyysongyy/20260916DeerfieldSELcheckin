@@ -388,40 +388,37 @@ var SLIDES = [
 '<p style="font-size:.86em;color:var(--muted)">帶著這三句，我們進入活動一。</p></div>'+
 '</div>'},
 
-{t:'活動一：我的情緒地圖（老師版）', part:'🌱 MINDSET', time:'01:00', html:
-'<div class="kicker"><span class="tag" style="background:#fdf3e0;color:var(--energy-d)">✏️ 活動一 · POST IT · 10 分鐘</span></div>'+
-'<h2 class="h-slide">我的情緒地圖 —— 老師版</h2>'+
-'<p class="sub">在教學生覺察之前，先讓自己走一次。這也是 MINDSET 這一層的收尾。</p><div class="rule"></div>'+
+{t:'活動一：我的情緒溫度計（老師版）', part:'🌱 MINDSET', time:'01:00', html:
+'<div class="kicker"><span class="tag" style="background:#fdf3e0;color:var(--energy-d)">✏️ 活動一 · 動手做 · 10 分鐘</span></div>'+
+'<h2 class="h-slide">我的情緒溫度計 —— 老師版</h2>'+
+'<p class="sub">在教學生覺察之前，先讓自己做一次、用一次。這也是 MINDSET 這一層的收尾。</p><div class="rule"></div>'+
 '<div class="grid g2">'+
 '<div class="card"><h4 style="margin-bottom:.5em">📋 步驟說明</h4>'+
 '<ol class="bul" style="font-size:.94em">'+
-'<li>回想<b>「上週一整天在學校」</b>的經歷。</li>'+
-'<li>在時間軸上，用四個顏色標出你在各時段的情緒。</li>'+
-'<li>找出「最高點」和「最低點」各發生了什麼。<span style="color:var(--muted)">（個人 3 分鐘）</span></li>'+
-'<li>與旁邊的夥伴分享<b>一個</b>時段的感受。<span style="color:var(--muted)">（組內 5 分鐘）</span></li>'+
-'<li>跨組分享：找兩位<b>非本組</b>的夥伴各說一次。<span style="color:var(--muted)">（組外 10 分鐘 · WHY SEL CIRCLE）</span></li>'+
+'<li>畫出你的情緒溫度計外框，標出<b>四色分區</b>。<span style="color:var(--muted)">（個人 2 分鐘）</span></li>'+
+'<li>想一想最近在學校裡，什麼情境會讓你落在每個顏色——寫下<b>屬於你自己的情緒詞彙</b>。<span style="color:var(--muted)">（個人 3 分鐘）</span></li>'+
+'<li>每個顏色旁邊，寫一件「<b>我可以做的事</b>」。</li>'+
+'<li><b>操作一次</b>：自己比出一個顏色，對自己說一句「我這週是＿色，因為＿」。</li>'+
+'<li>跟旁邊的夥伴<b>互相操作</b>彼此的溫度計，說一件「我可以做的事」。<span style="color:var(--muted)">（組內 5 分鐘）</span></li>'+
+'<li>兩組交換：找<b>另一組</b>老師，互相看看彼此的溫度計設計，交換一個因應方法的靈感。<span style="color:var(--muted)">（跨組 5–8 分鐘 · WHY SEL CIRCLE）</span></li>'+
 '</ol>'+
 '<div class="note" style="margin-top:.9em;box-shadow:none;background:#f7fafd;font-size:.9em">'+
-'⏱️ 時間可依現場調整：個人 3′ ▸ 組內 5′ ▸ 跨組 10′。若時間緊，跨組那一段可以只找一位。</div>'+
+'⏱️ 時間可依現場調整：個人 5′ ▸ 組內 5′ ▸ 跨組 5–8′。若時間緊，跨組那一段可以只找一組。</div>'+
 '</div>'+
 '<div>'+
+'<div class="thermo-wrap"><div class="thermo">'+
+'<div class="ts" style="background:var(--relate)">紅・生氣</div>'+
+'<div class="ts" style="background:var(--energy)">黃・焦慮</div>'+
+'<div class="ts" style="background:var(--mindful)">藍・難過</div>'+
+'<div class="ts" style="background:var(--reflect)">綠・平靜</div>'+
+'</div></div>'+
 '<div class="card" style="border-top:6px solid var(--energy)"><h4 style="margin-bottom:.5em">💡 引導問題</h4>'+
 '<ul class="bul" style="font-size:.94em">'+
-'<li>哪一個顏色出現最多次？</li>'+
-'<li>什麼情境最容易觸發你？</li>'+
+'<li>哪一個顏色這週出現最多次？</li>'+
+'<li>什麼情境最容易觸發你？身體先出現什麼訊號？</li>'+
 '<li>你通常用什麼方式回到綠區？</li>'+
-'<li>那個「最低點」，如果重來一次，你會希望有人對你說什麼？</li>'+
+'<li>哪一件「我可以做的事」，其實你早就知道有用，只是很少真的去做？</li>'+
 '</ul></div>'+
-'<div class="card" style="margin-top:12px;background:linear-gradient(160deg,#fff,#fff7f0)">'+
-'<h4 style="margin-bottom:.4em">🕗 一天的六個時段（貼便利貼用）</h4>'+
-'<div class="grid" style="grid-template-columns:repeat(3,1fr);gap:8px;font-size:.85em;font-weight:700">'+
-'<div style="background:#fff;border-radius:12px;padding:.5em .6em;box-shadow:var(--sh);text-align:center">07:40<br><span style="font-weight:600;color:var(--muted)">早自習</span></div>'+
-'<div style="background:#fff;border-radius:12px;padding:.5em .6em;box-shadow:var(--sh);text-align:center">10:00<br><span style="font-weight:600;color:var(--muted)">大下課後</span></div>'+
-'<div style="background:#fff;border-radius:12px;padding:.5em .6em;box-shadow:var(--sh);text-align:center">12:30<br><span style="font-weight:600;color:var(--muted)">午休</span></div>'+
-'<div style="background:#fff;border-radius:12px;padding:.5em .6em;box-shadow:var(--sh);text-align:center">14:30<br><span style="font-weight:600;color:var(--muted)">下午課</span></div>'+
-'<div style="background:#fff;border-radius:12px;padding:.5em .6em;box-shadow:var(--sh);text-align:center">16:00<br><span style="font-weight:600;color:var(--muted)">放學前</span></div>'+
-'<div style="background:#fff;border-radius:12px;padding:.5em .6em;box-shadow:var(--sh);text-align:center">17:30<br><span style="font-weight:600;color:var(--muted)">回家路上</span></div>'+
-'</div></div>'+
 '</div></div>'+
 '<div class="note">⑤ 全班反思：<b>什麼讓你進入紅／藍？你如何回到綠？</b><br>'+
 '這一題的答案，等一下在 SKILLSET 會變成你給學生的「處方」。</div>'},
@@ -1041,7 +1038,7 @@ var SLIDES = [
 '<tr><td>02:45</td><td>—</td><td><b>三層整合 ▸ 我的第一步 ▸ Check-out ▸ 延伸工具 ▸ Q&amp;A</b>（15′）</td><td>P49–P54</td><td>寫下承諾；圍圈收尾；掃延伸工具 QR；填回饋表單；提問</td></tr>'+
 '</tbody></table></div>'+
 '<div class="grid g3" style="margin-top:16px">'+
-'<div class="qc energy"><h4><span class="ico">1</span>活動一 · P24</h4><p style="margin:0">我的情緒地圖（老師版）<br>個人 3′ ▸ 組內 5′ ▸ 跨組 10′</p></div>'+
+'<div class="qc energy"><h4><span class="ico">1</span>活動一 · P24</h4><p style="margin:0">我的情緒溫度計（老師版）<br>個人 5′ ▸ 組內 5′ ▸ 跨組 5–8′</p></div>'+
 '<div class="qc mindful"><h4><span class="ico">2</span>活動二 · P37</h4><p style="margin:0">情境辨識 8 題<br>小組討論 10′</p></div>'+
 '<div class="qc relate"><h4><span class="ico">3</span>活動三 · P44</h4><p style="margin:0">我的第一週 Check-in 課表<br>個人 5′ ▸ 組內 7′ ▸ 改小 3′</p></div>'+
 '</div>'+
