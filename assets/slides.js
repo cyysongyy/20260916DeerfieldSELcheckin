@@ -119,7 +119,7 @@ var SLIDES = [
 '<div class="time">I DO ｜ 00:15 – 00:40 ｜ 25 minutes</div></div>'},
 
 {t:'起點：一個孩子的情緒需求', part:'I DO 辰光現場', time:'00:16', html:
-'<h2 class="h-slide">我到辰光的第一年，沒有推課程</h2>'+
+'<h2 class="h-slide">我到辰光第一年，感受到情緒的需求</h2>'+
 '<p class="sub">因為有更急的事。</p><div class="rule"></div>'+
 '<div class="grid g2">'+
 '<div><div class="tl">'+
