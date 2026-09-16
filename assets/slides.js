@@ -163,7 +163,7 @@ var SLIDES = [
 {t:'115 學年度四大推動策略', part:'I DO 辰光現場', time:'00:24', html:
 '<h2 class="h-slide">四個角色一起動，文化才長得出來</h2>'+
 '<p class="sub">導師教課程、科任管情緒轉換、全校共用圍圈、環境提供支持。</p><div class="rule"></div>'+
-'<img class="shot" src="assets/strategies.jpg" alt="辰光國小 115 學年度 SEL 四大推動策略（第③④塊已換成真實現場照片：圍圈活動、校園與教室環境）">'+
+'<img class="shot" src="assets/strategies.jpg" alt="辰光國小 115 學年度 SEL 四大推動策略（第③格改版為三大格照片版面，比照第④格：整隊帶隊、深化圍圈實景、PDCA引導）">'+
 '<div class="grid g2" style="margin-top:12px">'+
 '<div><img class="shot" src="assets/classroom-tools.jpg" alt="辰光國小教室情緒溫度計與冷靜方法海報實景"><p class="cap">教室現場：情緒溫度計 × 冷靜方法海報</p></div>'+
 '<div class="note" style="margin-top:0">今天這場工作坊，主要拆解的是<b>第 ② 塊：科任老師的課堂情緒轉換</b> —— '+
