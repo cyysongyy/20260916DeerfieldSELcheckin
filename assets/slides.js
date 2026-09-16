@@ -163,9 +163,12 @@ var SLIDES = [
 {t:'115 學年度四大推動策略', part:'I DO 辰光現場', time:'00:24', html:
 '<h2 class="h-slide">四個角色一起動，文化才長得出來</h2>'+
 '<p class="sub">導師教課程、科任管情緒轉換、全校共用圍圈、環境提供支持。</p><div class="rule"></div>'+
-'<img class="shot" src="assets/strategies.jpg" alt="辰光國小 115 學年度 SEL 四大推動策略">'+
-'<div class="note">今天這場工作坊，主要拆解的是<b>第 ② 塊：科任老師的課堂情緒轉換</b> —— '+
-'因為它不佔正課、不用寫教案、不動課表，是任何一所學校都可以在下週一開始的那一塊。</div>'},
+'<img class="shot" src="assets/strategies.jpg" alt="辰光國小 115 學年度 SEL 四大推動策略（第④塊已換成校園與教室的真實現場照片）">'+
+'<div class="grid g2" style="margin-top:12px">'+
+'<div><img class="shot" src="assets/classroom-tools.jpg" alt="辰光國小教室情緒溫度計與冷靜方法海報實景"><p class="cap">教室現場：情緒溫度計 × 冷靜方法海報</p></div>'+
+'<div class="note" style="margin-top:0">今天這場工作坊，主要拆解的是<b>第 ② 塊：科任老師的課堂情緒轉換</b> —— '+
+'因為它不佔正課、不用寫教案、不動課表，是任何一所學校都可以在下週一開始的那一塊。</div>'+
+'</div>'},
 
 {t:'全校共通語言', part:'I DO 辰光現場', time:'00:27', html:
 '<h2 class="h-slide">讓全校在講同一套話</h2>'+
