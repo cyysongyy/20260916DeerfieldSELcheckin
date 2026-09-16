@@ -127,7 +127,9 @@ var SLIDES = [
 '<div class="tl-i"><b>信使：2024 KIST 教育峰會遇見 SEL</b><span>拯民國小林郁杏校長帶來組織化思考與 ARCI 工具；陳廷瑜每週一的支持與教具。</span></div>'+
 '<div class="tl-i"><b>試煉一：帶頭者的啟航（2024/10，五甲）</b><span>選定課文 ▸ 情境布置 ▸ 設計教案（AI 協作）▸ 學習單 ▸ 融入 SEL 五大目標 ▸ 導師上完 ▸ 回饋。流程跑通了。</span></div>'+
 '<div class="tl-i"><b>試煉二：帶頭者的失敗</b><span>流程通了，但我答不出一個問題 —— 這堂課到底在教「課文內容」還是在教「情緒」？</span></div>'+
-'</div></div>'+
+'</div>'+
+'<div class="card" style="margin-top:12px;padding:.6em"><img class="shot" src="assets/kist-summit.jpg" alt="2024 KIST 教育峰會 SEL 分享現場"><p class="cap">2024 KIST 教育峰會 · SEL 分享現場</p></div>'+
+'</div>'+
 '<div class="card" style="background:linear-gradient(160deg,#fff,#fff7f0);border-top:6px solid var(--dawn)">'+
 '<div class="tag" style="background:#ffe9d9;color:#a5501f">我後來的答案</div>'+
 '<h3 style="margin:.6em 0 .4em;font-size:1.25em">不要把 SEL 塞進學科課。</h3>'+
