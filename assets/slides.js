@@ -57,9 +57,9 @@ var SLIDES = [
 '<span style="display:block;font-size:.42em;font-weight:800;color:var(--muted);letter-spacing:.02em;margin-top:.5em">狀態先於內容 —— 一鍵啟動班級的最佳學習頻率</span></h1>'+
 '<div class="rule"></div>'+
 '<div class="grid g3" style="margin:6px 0 18px">'+
-'<div class="qc energy" style="padding:.9em 1.1em"><h4><span class="ico">🌱</span>MINDSET</h4><p style="margin:0">為什麼要花那一分鐘</p></div>'+
-'<div class="qc mindful" style="padding:.9em 1.1em"><h4><span class="ico">🎨</span>SKILLSET</h4><p style="margin:0">四色語言 × 四顆膠囊</p></div>'+
-'<div class="qc reflect" style="padding:.9em 1.1em"><h4><span class="ico">🧰</span>TOOLSET</h4><p style="margin:0">一日導航與我的第一週</p></div>'+
+'<div class="qc energy" style="padding:.9em 1.1em"><h4><span class="ico">🌱</span>MINDSET<span style="font-weight:600;color:var(--energy-d);font-size:.8em;margin-left:.35em">(Why?)</span></h4><p style="margin:0">為什麼要花那一分鐘</p></div>'+
+'<div class="qc mindful" style="padding:.9em 1.1em"><h4><span class="ico">🎨</span>SKILLSET<span style="font-weight:600;color:var(--mindful-d);font-size:.8em;margin-left:.35em">(What?)</span></h4><p style="margin:0">四色語言 × 四顆膠囊</p></div>'+
+'<div class="qc reflect" style="padding:.9em 1.1em"><h4><span class="ico">🧰</span>TOOLSET<span style="font-weight:600;color:var(--reflect-d);font-size:.8em;margin-left:.35em">(How?)</span></h4><p style="margin:0">一日導航與我的第一週</p></div>'+
 '</div>'+
 '<div class="grid g4">'+
 '<div class="card" style="padding:1em"><div class="tag">主講</div><div style="font-weight:900;margin-top:.4em">陳彥揚 校長</div><div style="font-size:.85em;color:var(--muted)">雲林縣辰光國小</div></div>'+
